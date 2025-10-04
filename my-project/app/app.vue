@@ -35,7 +35,7 @@
           <th
             class="w-1/4 py-4 px-6 text-left text-gray-600 font-bold uppercase"
           >
-            Ceklist
+            Checklist
           </th>
           <th
             class="w-1/4 py-4 px-6 text-left text-gray-600 font-bold uppercase"
