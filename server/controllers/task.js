@@ -30,10 +30,10 @@ module.exports = class TaskController {
     try {
       const { id } = req.params;
       const { title, status } = req.body;
+      console.log('Updating Task:', { id, title, status }); // Debugging line
       const task = await Task.findByPk(id);
       if (!task) throw { name: "NotFound", message: "Task Not Found" };
-      task.title = title;
-      task.status = status;
+      await Task.update({ title, status }, { where: { id } }, { transaction: t });
       await t.commit();
       res.status(200).json(task);
     } catch (error) {
